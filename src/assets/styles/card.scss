@@ -1,0 +1,129 @@
+.card {
+  position: relative;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 140px;
+    left: 160px;
+    width: 400px;
+    height: 465px;
+    z-index: 1;
+    background: var(--before-url) no-repeat;
+  }
+
+  &__figure {
+    cursor: pointer;
+    width: 282px;
+    height: 282px;
+    border-radius: 50%;
+
+    &:hover {
+      .card__half {
+        &::after {
+          right: -35px;
+        }
+      }
+
+      .card__half {
+        clip-path: inset(0 15% 0 0);
+      }
+
+      .card__img {
+        scale: 1.05;
+        rotate: 10deg;
+      }
+    }
+  }
+
+  &__blur {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background: #fbd927;
+    filter: blur(100px);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__blur-border {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    border: 10px solid #fff1aa;
+    filter: blur(15px);
+    z-index: 1;
+  }
+
+  &__half {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    rotate: 48deg;
+    background-color: #e13320; /* Цвет левой половинки */
+    clip-path: inset(0 0 0 0);
+
+    transition: clip-path 0.2s ease-in-out;
+    overflow: hidden;
+    z-index: 2;
+
+    &::after {
+      content: '';
+      background: url('/slides/clip.png') no-repeat;
+      position: absolute;
+      bottom: 72px;
+      right: -120px;
+      width: 151px;
+      height: 136px;
+      z-index: 2;
+      rotate: -48deg;
+      transition: all 0.25s ease-in-out;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: -100px;
+    left: -40px;
+    transition: all 0.3s ease-in-out;
+    z-index: 3;
+
+    @media (max-width: 950px) {
+      width: 250px;
+      left: -30px;
+    }
+  }
+
+  h2 {
+    position: relative;
+    left: 130px;
+    font-weight: 700;
+    font-size: clamp(3.75rem, calc(-0.714rem + 9.52vw), 7.5rem);
+    line-height: 100%;
+    color: #fbd927;
+    z-index: 3;
+  }
+
+  p {
+    position: relative;
+    left: 125px;
+    max-width: clamp(10.625rem, calc(-11.192rem + 36.74vw), 20.5rem);
+    width: 100%;
+    font-weight: 500;
+    font-size: clamp(1rem, calc(-0.795rem + 3.02vw), 1.813rem);
+    line-height: 110%;
+    color: #000;
+    z-index: 3;
+  }
+}
