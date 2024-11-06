@@ -61,7 +61,7 @@ import RewardIcon from './icons/RewardIcon.vue'
     position: relative;
     width: 900px;
     height: 700px;
-    background: url('../../public/adward.png');
+    background: url('/public/adward.png');
   }
 
   &__border {
@@ -71,7 +71,7 @@ import RewardIcon from './icons/RewardIcon.vue'
     left: 208px;
     width: 556px;
     height: 600px;
-    background: url('../../public/adward-border.png');
+    background: url('/public/adward-border.png');
   }
 }
 </style>
