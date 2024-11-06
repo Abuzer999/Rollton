@@ -84,12 +84,6 @@
     opacity: 0;
     visibility: visible;
   }
-
-  &__before {
-    &:last-child {
-      background: none;
-    }
-  }
 }
 
 .modal-active {
