@@ -5,7 +5,7 @@
   z-index: 1;
   background: #df231d;
   padding-top: 63px;
-  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
 
   &__content {
@@ -18,6 +18,19 @@
     height: clamp(9.375rem, calc(1.62rem + 38.77vw), 35.063rem);
     z-index: 1000;
     transition: all 0.5s ease;
+
+    @media(max-height: 850px) {
+      height: 450px;
+    }
+    @media(max-height: 750px) {
+      height: 350px;
+    }
+    @media(max-height: 650px) {
+      height: 260px;
+    }
+    @media(max-height: 550px) {
+      height: 200px;
+    }
   }
 
   &__click {
