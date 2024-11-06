@@ -360,7 +360,7 @@
       animation: none;
       &:nth-child(2) {
         opacity: 0;
-        visibility: 0;
+        visibility: visible;
         position: absolute;
         z-index: -1;
       }
