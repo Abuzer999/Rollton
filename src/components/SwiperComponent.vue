@@ -120,7 +120,11 @@ const closeModal = (): void => {
           <Card
             :id="card.id"
             :url="card.url"
-            :before-url="card.beforeUrl"
+            :style="{
+                '--before-url': card.beforeUrl
+                ? `url(${card.beforeUrl})`
+                : 'none',
+            }"
             :year="card.year"
             :text="card.text"
             @handleHalfClick="openModal(card)"
